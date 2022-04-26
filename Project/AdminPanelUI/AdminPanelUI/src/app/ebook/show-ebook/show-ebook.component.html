@@ -1,0 +1,55 @@
+<!-- Button trigger modal -->
+<div class="col text-center">
+<button type="button" class="btn btn-primary float-right m-2" data-bs-toggle="modal" data-bs-target="#exampleModal"
+(click)="addClick()" data-keyboard="false">
+   Add EBook
+  </button>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{Modaltitle}}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+          (click)="closeClick()"
+          ></button>
+        </div>
+        <div class="modal-body">
+            <app-add-edit-ebook [eBook]="eBook" *ngIf="activateAddEditEBookComp"></app-add-edit-ebook>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+<table class="table table-striped w-auto center">
+    <thead class="table-light">
+     <tr>
+         <th>EBook Id</th>
+         <th>EBook Name</th>
+         <th>ISBN</th>
+         <th>Description</th>
+         <th>Publisher</th>
+         <th>Author</th>
+         
+         <th>Option</th>
+     </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dataItem of EBookList">
+          <td >{{dataItem.eBookId}}</td>
+          <td>{{dataItem.eBookName}}</td>
+          <td>{{dataItem.isbn}}</td>
+          <td>{{dataItem.description}}</td>
+          <td>{{dataItem.publisher}}</td>
+          <td>{{dataItem.author}}</td>
+         
+          <td>
+              <button type="button" class="btn btn-primary float-right m-2" data-bs-toggle="modal" data-bs-target="#exampleModal"
+              (click)="editClick(dataItem)" data-keyboard="false" >Edit</button>
+              <button (click)="deleteClick(dataItem)"   type="button" class="btn btn-light mr-1" >Delete</button>
+          </td>
+      </tr>
+    </tbody>
+  </table>

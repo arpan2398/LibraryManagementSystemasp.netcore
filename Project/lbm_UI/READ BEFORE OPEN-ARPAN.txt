@@ -1,0 +1,3 @@
+IF YOU WANT TO CHECK ANY PAGE JUST FIRST OPEN THE PORTNAME/home
+like-
+http://localhost:4200/home

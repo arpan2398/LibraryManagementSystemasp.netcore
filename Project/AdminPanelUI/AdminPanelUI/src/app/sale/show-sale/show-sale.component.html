@@ -1,0 +1,27 @@
+<table class="table table-striped w-auto center">
+    <thead class="table-light">
+     <tr>
+         <th>Sale Id</th>
+         <th> Student Id</th>
+         <th>Book Id</th>
+         <th>Price</th>
+         <th>Options</th>
+         
+     </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dataItem of SaleList">
+          <td>{{dataItem.saleId}}</td>
+          <td>{{dataItem.studentId}}</td>
+          <td>{{dataItem.bookId}}</td>
+          <td>{{dataItem.price}}</td>
+          
+         
+          <td>
+              <button type="button" class="btn btn-light mr-1" >Edit</button>
+              <button type="button" class="btn btn-light mr-1" >Delete</button>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+

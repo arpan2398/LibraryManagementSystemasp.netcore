@@ -1,0 +1,28 @@
+<table class="table table-striped w-auto center">
+    <thead class="table-light">
+     <tr>
+         <th>Faculty Id</th>
+         <th>Faculty Name</th>
+         <th>Email</th>
+         <th>Phone</th>
+         <th>Address</th>
+         <th>Designation Id</th>
+         
+     </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dataItem of FacultyList">
+          <td>{{dataItem.facultyId}}</td>
+          <td>{{dataItem.facultyName}}</td>
+          <td>{{dataItem.facultyEmail}}</td>
+          <td>{{dataItem.facultyPhone}}</td>
+          <td>{{dataItem.facultyAddress}}</td>
+          <td>{{dataItem.designationId}}</td>
+         
+          <td>
+              <button type="button" class="btn btn-light mr-1" >Edit</button>
+              <button type="button" class="btn btn-light mr-1" >Delete</button>
+          </td>
+      </tr>
+    </tbody>
+  </table>
